@@ -74,7 +74,7 @@ elif x == False:
 	pbar=progressbar.ProgressBar()
 	workers=[]
 	for key in pbar(author_list):
-		for url in author_list[key]:
+		for url in pbar(author_list[key]):
 			worker(url,key)
 #			t=mp.Process(target=worker,args=(url,"Authors"))
 #			t.start()
