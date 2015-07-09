@@ -57,12 +57,11 @@ x=checker()
 if x == True:
 	author = raw_input("enter the name of the author: ")
 	pages = int(raw_input("Enter the name of the pages to proccess : "))
-	url_dict = creator_name(author,pages)
-	print url_dict
+	url_list = creator_name(author,pages)
 	pbar=progressbar.ProgressBar()
 	workers = []
-	for key in pbar(url_dict):
-		worker(url_dict[key],author)
+	for key in pbar(url_list):
+		worker(key,author)
 #		t=mp.Process(target=worker,args=(url,author))
 #		t.start()
 #		workers.append(t)
